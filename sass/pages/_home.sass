@@ -1,0 +1,304 @@
+@use '../abstracts'
+@use '../abstracts/mixins' as breakpoint
+@use '../layout'
+@use '../components/line'
+@use '../components/buttons'
+
+// Hero 
+.hero-container
+    background: linear-gradient(#f38181, #fce38a)
+    background: abstracts.$ctaGradient
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+
+.cta-section-nav
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+
+    &__outter
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 3rem
+
+        &__inner
+            display: flex
+            flex-direction: row
+
+// About 
+.about-wrapper
+    display: flex
+    flex-direction: column
+
+    &__inner
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        &__image
+            display: block
+            object-fit: contain
+            height: 16rem
+            width: 19rem
+            max-height: 26rem
+            max-width: 38rem
+            margin-top: 2.2rem
+
+        &__image:first-of-type
+            margin-top: 9rem
+
+@include breakpoint.for-tablet-portrait
+.about-wrapper
+    @include abstracts.tablet-container-max-width()
+
+    &__inner
+        flex-direction: row
+        align-content: center
+        margin-top: 2.2rem
+        width: 100%
+        justify-content: space-between
+
+        &__image
+            height: 17rem
+            width: 20rem
+
+        &__image:first-of-type
+            margin-top: 2.2rem
+
+
+// Accomplishments banner 
+.num-banner-container
+    background-color: abstracts.$lightBlue
+    margin-top: 10rem
+
+.num-banner-wrapper
+    display: flex
+    flex-direction: column
+    padding: 8.9rem 0
+
+    &__inner
+        display: flex
+        flex-direction: column
+        margin-bottom: 9rem
+    
+    &__inner:last-child
+        margin-bottom: 0rem
+
+// Services
+.services-wrapper
+    display: flex
+    flex-direction: row
+    margin-left: 3%
+
+    &__outter
+        display: flex
+        flex-direction: column
+        width: 33.33%
+        padding: 1rem .5rem
+    
+    &__outter-image
+        @include abstracts.svgImage(32px, 32px, 0 .5rem 1rem 0)
+
+        &__inner
+            display: flex
+            flex-direction: column
+
+// Design
+.design-wrapper
+    display: block
+    position: relative
+    width: 35rem
+    height: 100%
+    margin: auto
+
+    &__image-1
+        display: block
+        height: 25rem
+        object-fit: contain
+        position: absolute
+        top: 25.5rem
+        left: 15%
+
+    &__image-2
+        display: block
+        height: 20rem
+        object-fit: contain
+        position: absolute
+        top: 35rem
+        left: 60%
+
+// What We Do
+.we-do-wrapper
+    display: flex
+    flex-direction: column
+
+    &__main-image
+        display: block
+        height: 17.5rem
+        width: 27rem
+        margin: auto
+
+    &__outter
+        display: flex
+        flex-direction: column
+        flex-grow: 1
+        margin-top: .5rem
+
+        &__inner
+            display: flex
+            flex-direction: row
+            align-items: center
+            border: 1px solid #00000021
+            padding: .5rem
+            margin-bottom: .5rem
+
+        &__inner-image
+            @include abstracts.svgImage(30px, 30px, .5rem)
+
+@include breakpoint.for-tablet-portrait
+.we-do-wrapper
+    flex-direction: row
+
+    &__main-image
+        height: 21rem
+        margin-right: 1rem
+
+    &__outter
+        margin-right: 1rem
+
+// Testimonial gallery
+.message-image
+    display: block
+    height: 12rem
+    object-fit: contain
+    margin: 4rem auto 0 auto
+
+.testimonial-wrapper
+    display: flex
+    flex-direction: row
+    align-items: center
+    padding: 4rem .5rem 6rem .5rem
+
+    &__outter
+        display: flex
+        flex-direction: column
+
+        &__inner
+            display: flex
+            flex-direction: row
+            align-items: center
+            margin-top: 2rem
+
+// Team
+.team-wrapper
+    display: flex
+    flex-direction: column
+    align-items: center
+
+
+    &__card
+        display: flex
+        flex-direction: column
+        align-items: center
+        margin-bottom: 5rem
+
+    &__card-img
+        display: block
+        height: 30rem
+        margin-bottom: 2rem
+
+@include breakpoint.for-tablet-portrait
+.team-wrapper
+    flex-direction: row
+    justify-content: space-around
+    margin-top: 5rem
+    
+
+// Work
+.clients-wrapper
+    padding: .5rem
+
+    &__top
+        display: flex
+        flex-direction: column
+
+        &__outter
+            display: flex
+            flex-direction: row
+
+        &__inner   
+            display: flex
+            flex-direction: column
+            padding: 0 1rem 0 1rem
+
+    &__bottom
+        display: flex
+        flex-direction: column
+        padding-bottom: 13rem
+
+        &__outter
+            display: flex
+            flex-direction: row
+
+        &__inner
+            display: flex
+            flex-direction: column
+            padding: 0 1rem 0 1rem
+
+// Blog
+.blog-wrapper
+    display: flex
+    flex-direction: column
+
+    &__blog
+        display: flex
+        flex-direction: column
+        max-width: 32.5rem
+        margin: auto
+        margin-bottom: 5rem
+
+        &__image
+            display: block
+            height: 17.5rem
+            width: 27.5rem
+            object-fit: contain
+            margin: 0 auto 15px auto
+
+        &__card-wrapper
+            position: relative
+
+            &__card
+                display: flex 
+                flex-direction: column
+                justify-content: center
+                align-items: center
+                height: 70px
+                width: 60px
+                background-color: #95e1d3
+                position: absolute
+                left: 1rem
+                top: -10rem
+                z-index: 100
+        
+        &__stats
+            display: flex
+            flex-direction: row
+            padding-left: 2rem
+            margin-top: 10px
+
+            &__image
+                display: block
+                height: 12px
+                width: 20px
+                object-fit: contain
+            
+            &__image:nth-of-type(2)
+                margin-left: 1rem
+
+
+
+
+
+

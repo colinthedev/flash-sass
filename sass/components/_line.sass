@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as mixin
+
+.line-break
+    @include mixin.solidLine(#ffffff, 70px auto 50px auto, 60px, 3px)
+
+.line-break-long
+    @include mixin.solidLine(#ffffff, 0 auto 14px auto, 85%, 3px)
+
+.line-break-red
+    @include mixin.solidLine(#f38181, 41px auto 47px auto, 60px, 3px)
+
+.line-break-red-banner
+    @include mixin.solidLine(#f38181, 0 10px 0 10px, 60px, 3px)
+
+.line-break-red-clients
+    @include mixin.solidLine(#f38181, 18px 0 18px 0, 60px, 3px)
+
+.line-break-gray-full
+    @include mixin.solidLine(#33333333, 0 auto, 90%, 1px)

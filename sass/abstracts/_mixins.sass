@@ -1,0 +1,57 @@
+
+@mixin solidLine($color, $margin, $width, $height) 
+  display: block
+  height: $height
+  width: $width
+  background-color: $color
+  margin: $margin
+
+@mixin svgImage($height, $width, $margin)
+  display: block
+  height: $height
+  width: $width
+  margin: $margin
+  object-fit: contain
+
+@mixin accordion-button($font-size, $margin, $rotate)
+  display: block
+  cursor: pointer
+  font-size: $font-size
+  border-radius: 25px
+  padding: 1.5rem
+  color:  rgba(51, 51, 51, 0.336)
+  object-fit: contain
+  transform: $rotate
+  margin: $margin
+
+@mixin tablet-container-max-width()
+  max-width: 65rem
+  margin: auto
+
+// Breakpoints
+@mixin for-nav-desktop
+  @media (max-width: 768px)
+    @content
+
+@mixin for-tablet-portrait
+  @media (min-width: 768px)  
+    @content
+
+@mixin for-tablet-landscape
+  @media (min-width : 768px) 
+    (max-width : 1024px) 
+    (orientation : landscape) 
+      @content
+
+@mixin for-desktop
+  @media (min-width: 1200px)  
+    @content
+
+@mixin for-big-desktop
+  @media (min-width: 1800px)  
+    @content
+
+
+  
+  
+  

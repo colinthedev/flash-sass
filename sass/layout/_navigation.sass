@@ -1,0 +1,35 @@
+@use '../abstracts/variables' as colors
+@use '../abstracts/mixins' as breakpoint
+
+.burger 
+    cursor: pointer
+    background-color: transparent
+    height: .6rem
+    width: 2rem
+    margin: auto 2.4rem auto auto
+    z-index: 100
+
+.burgerLine 
+    background-color: colors.$navBtn
+    height: 2.75px
+    margin: 4.25px 0
+
+    transition: .35s ease-in-out
+
+@include breakpoint.for-tablet-portrait
+    .burger
+        display: none
+    
+    .navigation
+        display: block
+
+        &__listWrapper
+            display: flex
+            flex-direction: row
+            justify-content: space-around
+            align-items: center
+            margin-left: auto
+            width: 50vw
+            height: 100%
+
+

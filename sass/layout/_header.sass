@@ -1,0 +1,10 @@
+@use '../abstracts/mixins' as breakpoint
+
+.header-container 
+    display: flex
+    flex-direction: row
+    padding-bottom: 11rem
+
+@include breakpoint.for-nav-desktop
+.navigation
+    display: none

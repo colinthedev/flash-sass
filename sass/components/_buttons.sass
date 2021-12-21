@@ -1,0 +1,19 @@
+@use '../abstracts/mixins' as mixin
+
+.learn-more-btn
+    display: block
+    background: transparent
+    border: solid 2px #ffffff
+    padding: 1rem
+    margin: auto
+    margin-bottom: 15rem
+
+.accordion-button-collapse
+    @include mixin.accordion-button(22px, 0 0 0 auto, rotate(90deg))
+    
+.accordion-button-prev
+    @include mixin.accordion-button(32px, 0 0 0 auto, rotate(-180deg))
+
+.accordion-button-next
+    @include mixin.accordion-button(32px, 0 0 0 auto, rotate(0deg))
+
