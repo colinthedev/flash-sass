@@ -404,10 +404,12 @@ template {
 .section-description-small {
   font-family: Roboto, sans-serif;
   font-size: 1.5rem;
-  letter-spacing: 0.35px;
+  letter-spacing: 0.4px;
   line-height: 18px;
   padding: 0.5rem;
   color: #999999;
+  max-width: 1050px;
+  margin: auto;
 }
 
 .testimonial-banner-quote {
@@ -418,6 +420,12 @@ template {
   color: #999999;
 }
 
+@media (min-width: 1200px) {
+  .testimonial-banner-quote {
+    padding: 0 2.5rem;
+    text-align: center;
+  }
+}
 .testimonial-banner-person {
   font-family: Lobster, cursive;
   font-size: 2.4rem;
@@ -601,7 +609,7 @@ template {
 
 .main-container {
   display: grid;
-  grid-template-rows: 10vh minmax(100rem, auto) minmax(75rem, auto) minmax(27rem, auto) minmax(65rem, auto) minmax(85rem, auto) minmax(90rem, auto) minmax(29rem, auto) minmax(105rem, auto) minmax(40rem, auto) repeat(3, minmax(20rem, auto)) minmax(42rem, auto) minmax(83rem, auto) minmax(74rem, auto) minmax(55rem, auto);
+  grid-template-rows: 10vh minmax(100rem, auto) minmax(45rem, auto) minmax(27rem, auto) minmax(65rem, auto) minmax(85rem, auto) minmax(72rem, auto) minmax(29rem, auto) minmax(72rem, auto) minmax(35rem, auto) repeat(3, minmax(20rem, auto)) minmax(42rem, auto) minmax(83rem, auto) minmax(74rem, auto) minmax(55rem, auto);
   grid-template-columns: [full-start] auto [center-start] repeat(12, [col-start] minmax(min-content, 5rem) [col-end]) [center-end] auto [full-end];
 }
 
@@ -890,25 +898,39 @@ template {
   margin-top: 9rem;
 }
 
-.about-wrapper {
-  max-width: 65rem;
-  margin: auto;
+@media (min-width: 768px) {
+  .about-wrapper {
+    max-width: 65rem;
+    margin: auto;
+  }
+  .about-wrapper__inner {
+    flex-direction: row;
+    align-content: center;
+    margin-top: 2.2rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .about-wrapper__inner__image {
+    height: 17rem;
+    width: 20rem;
+  }
+  .about-wrapper__inner__image:first-of-type {
+    margin-top: 2.2rem;
+  }
 }
-.about-wrapper__inner {
-  flex-direction: row;
-  align-content: center;
-  margin-top: 2.2rem;
-  width: 100%;
-  justify-content: space-between;
+@media (min-width: 1200px) {
+  .about-wrapper {
+    max-width: 1250px;
+  }
+  .about-wrapper__inner {
+    justify-content: space-around;
+    width: auto;
+  }
+  .about-wrapper__inner__image {
+    height: 21rem;
+    width: 39rem;
+  }
 }
-.about-wrapper__inner__image {
-  height: 17rem;
-  width: 20rem;
-}
-.about-wrapper__inner__image:first-of-type {
-  margin-top: 2.2rem;
-}
-
 .num-banner-container {
   background-color: #95e1d3;
   margin-top: 10rem;
@@ -984,6 +1006,7 @@ template {
   height: 17.5rem;
   width: 27rem;
   margin: auto;
+  object-fit: cover;
 }
 .we-do-wrapper__outter {
   display: flex;
@@ -1007,17 +1030,24 @@ template {
   object-fit: contain;
 }
 
-.we-do-wrapper {
-  flex-direction: row;
+@media (min-width: 768px) {
+  .we-do-wrapper {
+    flex-direction: row;
+  }
+  .we-do-wrapper__main-image {
+    height: 21rem;
+    margin-right: 1rem;
+  }
+  .we-do-wrapper__outter {
+    margin-right: 1rem;
+  }
 }
-.we-do-wrapper__main-image {
-  height: 21rem;
-  margin-right: 1rem;
+@media (min-width: 1200px) {
+  .we-do-wrapper {
+    max-width: 1250px;
+    margin: auto;
+  }
 }
-.we-do-wrapper__outter {
-  margin-right: 1rem;
-}
-
 .message-image {
   display: block;
   height: 12rem;
@@ -1030,6 +1060,8 @@ template {
   flex-direction: row;
   align-items: center;
   padding: 4rem 0.5rem 6rem 0.5rem;
+  max-width: 1250px;
+  margin: auto;
 }
 .testimonial-wrapper__outter {
   display: flex;
@@ -1059,14 +1091,25 @@ template {
   margin-bottom: 2rem;
 }
 
-.team-wrapper {
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 5rem;
+@media (min-width: 768px) {
+  .team-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5rem;
+  }
 }
-
+@media (min-width: 1200px) {
+  .team-wrapper {
+    max-width: 1050px;
+    margin: 5rem auto 0 auto;
+  }
+}
 .clients-wrapper {
+  display: flex;
+  flex-direction: column;
   padding: 0.5rem;
+  max-width: 700px;
+  margin: auto;
 }
 .clients-wrapper__top {
   display: flex;
@@ -1096,6 +1139,15 @@ template {
   padding: 0 1rem 0 1rem;
 }
 
+@media (min-width: 1200px) {
+  .clients-wrapper {
+    flex-direction: row;
+    max-width: 1250px;
+  }
+  .clients-wrapper__top {
+    padding-right: 2rem;
+  }
+}
 .blog-wrapper {
   display: flex;
   flex-direction: column;
@@ -1144,4 +1196,19 @@ template {
 }
 .blog-wrapper__blog__stats__image:nth-of-type(2) {
   margin-left: 1rem;
+}
+
+@media (min-width: 1200px) {
+  .blog-wrapper {
+    flex-direction: row;
+    max-width: 1250px;
+    margin: auto;
+  }
+  .blog-wrapper__blog {
+    min-height: 33.6rem;
+    max-width: 38.5rem;
+  }
+  .blog-wrapper__blog__card-wrapper__card {
+    left: 3rem;
+  }
 }

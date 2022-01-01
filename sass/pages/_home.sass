@@ -50,22 +50,34 @@
             margin-top: 9rem
 
 @include breakpoint.for-tablet-portrait
-.about-wrapper
-    @include abstracts.tablet-container-max-width()
+    .about-wrapper
+        @include abstracts.tablet-container-max-width()
 
-    &__inner
-        flex-direction: row
-        align-content: center
-        margin-top: 2.2rem
-        width: 100%
-        justify-content: space-between
-
-        &__image
-            height: 17rem
-            width: 20rem
-
-        &__image:first-of-type
+        &__inner
+            flex-direction: row
+            align-content: center
             margin-top: 2.2rem
+            width: 100%
+            justify-content: space-between
+
+            &__image
+                height: 17rem
+                width: 20rem
+
+            &__image:first-of-type
+                margin-top: 2.2rem
+
+@include breakpoint.for-desktop
+    .about-wrapper
+        max-width: 1250px
+
+        &__inner
+            justify-content: space-around
+            width: auto
+
+            &__image
+                height: 21rem
+                width: 39rem
 
 
 // Accomplishments banner 
@@ -139,6 +151,7 @@
         height: 17.5rem
         width: 27rem
         margin: auto
+        object-fit: cover
 
     &__outter
         display: flex
@@ -158,15 +171,20 @@
             @include abstracts.svgImage(30px, 30px, .5rem)
 
 @include breakpoint.for-tablet-portrait
-.we-do-wrapper
-    flex-direction: row
+    .we-do-wrapper
+        flex-direction: row
 
-    &__main-image
-        height: 21rem
-        margin-right: 1rem
+        &__main-image
+            height: 21rem
+            margin-right: 1rem
 
-    &__outter
-        margin-right: 1rem
+        &__outter
+            margin-right: 1rem
+
+@include breakpoint.for-desktop
+    .we-do-wrapper
+        max-width: 1250px
+        margin: auto
 
 // Testimonial gallery
 .message-image
@@ -180,6 +198,8 @@
     flex-direction: row
     align-items: center
     padding: 4rem .5rem 6rem .5rem
+    max-width: 1250px
+    margin: auto
 
     &__outter
         display: flex
@@ -210,15 +230,23 @@
         margin-bottom: 2rem
 
 @include breakpoint.for-tablet-portrait
-.team-wrapper
-    flex-direction: row
-    justify-content: space-around
-    margin-top: 5rem
-    
+    .team-wrapper
+        flex-direction: row
+        justify-content: space-around
+        margin-top: 5rem
 
+@include breakpoint.for-desktop
+    .team-wrapper
+        max-width: 1050px
+        margin: 5rem auto 0 auto
+    
 // Work
 .clients-wrapper
+    display: flex
+    flex-direction: column
     padding: .5rem
+    max-width: 700px
+    margin: auto
 
     &__top
         display: flex
@@ -246,6 +274,14 @@
             display: flex
             flex-direction: column
             padding: 0 1rem 0 1rem
+        
+@include breakpoint.for-desktop
+    .clients-wrapper
+        flex-direction: row
+        max-width: 1250px
+
+        &__top
+            padding-right: 2rem
 
 // Blog
 .blog-wrapper
@@ -296,6 +332,19 @@
             
             &__image:nth-of-type(2)
                 margin-left: 1rem
+
+@include breakpoint.for-desktop
+    .blog-wrapper
+        flex-direction: row
+        max-width: 1250px
+        margin: auto
+
+        &__blog
+            min-height: 33.6rem
+            max-width: 38.5rem
+
+            &__card-wrapper__card
+                left: 3rem
 
 
 
